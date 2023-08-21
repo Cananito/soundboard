@@ -13,7 +13,8 @@ function _rg_play(soundFilePath) {
 };
 
 function _rg_setUpDOM() {
-  let quackButton = document.getElementById("rg_button_quack");
+  // TODO: Modify so button set-up is more generic and avoid one by one.
+  const quackButton = document.getElementById("rg_button_quack");
   quackButton.onclick = function() {
     rg_buttonWasClicked(quackButton);
   };
