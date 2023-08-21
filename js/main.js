@@ -1,7 +1,7 @@
 function rg_buttonWasClicked(element) {
   console.log("Element clicked: " + element.id + " - " + element.innerHTML);
   var soundFilePath = "TODO"
-  _rg_play(soundFilePath);
+  rg_play(soundFilePath);
 };
 
 function rg_play(soundFilePath) {
@@ -25,9 +25,9 @@ function rg_setUpDOM() {
   const quackButton = document.createElement("button");
   quackButton.id = "rg_button_quack";
   quackButton.innerHTML = "Quack!";
-  quackButton.onclick = function() {
+  quackButton.addEventListener("click", function(e) {
     rg_buttonWasClicked(quackButton);
-  };
+  });
   quackButton.style.borderRadius = "12px";
   quackButton.style.fontSize = "5vmax";
   quackButton.style.width = "100%";
@@ -42,9 +42,9 @@ function rg_setUpDOM() {
   const woofButton = document.createElement("button");
   woofButton.id = "rg_button_woof";
   woofButton.innerHTML = "Woof!";
-  woofButton.onclick = function() {
+  woofButton.addEventListener("click", function(e) {
     rg_buttonWasClicked(woofButton);
-  };
+  });
   woofButton.style.borderRadius = "12px";
   woofButton.style.fontSize = "5vmax";
   woofButton.style.width = "100%";
@@ -59,9 +59,9 @@ function rg_setUpDOM() {
   const meowButton = document.createElement("button");
   meowButton.id = "rg_button_meow";
   meowButton.innerHTML = "Meow!";
-  meowButton.onclick = function() {
+  meowButton.addEventListener("click", function(e) {
     rg_buttonWasClicked(meowButton);
-  };
+  });
   meowButton.style.borderRadius = "12px";
   meowButton.style.fontSize = "5vmax";
   meowButton.style.width = "100%";
@@ -76,9 +76,9 @@ function rg_setUpDOM() {
   const moooButton = document.createElement("button");
   moooButton.id = "rg_button_mooo";
   moooButton.innerHTML = "Mooo!";
-  moooButton.onclick = function() {
+  moooButton.addEventListener("click", function(e) {
     rg_buttonWasClicked(moooButton);
-  };
+  });
   moooButton.style.borderRadius = "12px";
   moooButton.style.fontSize = "5vmax";
   moooButton.style.width = "100%";
@@ -91,4 +91,4 @@ function rg_setUpDOM() {
 
 // DOM set-up
 
-document.addEventListener("DOMContentLoaded", _rg_setUpDOM);
+document.addEventListener("DOMContentLoaded", rg_setUpDOM);
