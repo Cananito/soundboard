@@ -89,7 +89,7 @@ function _rg_setUpDOM() {
   moooButton.style.height = "43vh";
   buttonGridItem_2_2.appendChild(moooButton);
 
-  const body = document.getElementsByTagName("body").item(0);
+  const body = document.body;
   body.appendChild(buttonGridDiv);
 };
 
