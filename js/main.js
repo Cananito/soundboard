@@ -1,12 +1,22 @@
+const soundFilePathsById = {
+  "rg_button_quack": "resources/quack.m4a",
+  "rg_button_woof": "resources/woof.m4a",
+  "rg_button_meow": "resources/meow.m4a",
+  "rg_button_mooo": "resources/mooo.m4a",
+};
+
 function rg_buttonWasClicked(element) {
-  console.log("Element clicked: " + element.id + " - " + element.innerHTML);
-  var soundFilePath = "TODO"
+  var soundFilePath = soundFilePathsById[element.id];
   rg_play(soundFilePath);
 };
 
 function rg_play(soundFilePath) {
-  console.log("Sound file path: " + soundFilePath);
+  let audio = new Audio(soundFilePath);
+  audio.play();
 };
+
+
+// DOM set-up
 
 function rg_setUpDOM() {
   // TODO: Clean this up to avoid repeating so much code.
@@ -88,7 +98,5 @@ function rg_setUpDOM() {
   const body = document.body;
   body.appendChild(buttonGridDiv);
 };
-
-// DOM set-up
 
 document.addEventListener("DOMContentLoaded", rg_setUpDOM);
