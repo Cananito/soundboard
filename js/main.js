@@ -1,3 +1,20 @@
+/* TODO: Do this to eliminate padding globally (sepcially on top)
+* {
+  margin: 0;
+  padding: 0;
+}
+*/
+/* TODO: Set body to full size, instead of based on the content
+html, body {
+  width: 100%;
+  height: 100%;
+}
+*/
+/*
+ * TODO: globally set `box-sizing: border-box;` so borders are included as part
+ * of element size.
+ */
+
 const soundFilePathsById = {
   "rg_button_quack": "resources/quack.m4a",
   "rg_button_woof": "resources/woof.m4a",
@@ -24,8 +41,8 @@ function rg_setUpDOM() {
   const buttonGridDiv = document.createElement("div");
   buttonGridDiv.id = "rg_button_grid";
   buttonGridDiv.style.display = "grid";
-  buttonGridDiv.style.gridTemplateColumns = "40% 40%";
-  buttonGridDiv.style.gap = "10%";
+  buttonGridDiv.style.gridTemplateColumns = "50% 50%";
+  buttonGridDiv.style.gap = "0%";
 
   const buttonGridItem_1_1 = document.createElement("div");
   buttonGridItem_1_1.id = "rg_button_grid_item_1_1";
@@ -40,7 +57,7 @@ function rg_setUpDOM() {
   });
   quackButton.style.borderRadius = "12px";
   quackButton.style.fontSize = "5vmax";
-  quackButton.style.width = "100%";
+  quackButton.style.width = "50vw";
   quackButton.style.height = "43vh";
   buttonGridItem_1_1.appendChild(quackButton);
 
@@ -57,7 +74,7 @@ function rg_setUpDOM() {
   });
   woofButton.style.borderRadius = "12px";
   woofButton.style.fontSize = "5vmax";
-  woofButton.style.width = "100%";
+  woofButton.style.width = "50vw";
   woofButton.style.height = "43vh";
   buttonGridItem_1_2.appendChild(woofButton);
 
@@ -74,7 +91,7 @@ function rg_setUpDOM() {
   });
   meowButton.style.borderRadius = "12px";
   meowButton.style.fontSize = "5vmax";
-  meowButton.style.width = "100%";
+  meowButton.style.width = "50vw";
   meowButton.style.height = "43vh";
   buttonGridItem_2_1.appendChild(meowButton);
 
@@ -91,7 +108,7 @@ function rg_setUpDOM() {
   });
   moooButton.style.borderRadius = "12px";
   moooButton.style.fontSize = "5vmax";
-  moooButton.style.width = "100%";
+  moooButton.style.width = "50vw";
   moooButton.style.height = "43vh";
   buttonGridItem_2_2.appendChild(moooButton);
 
