@@ -38,6 +38,8 @@ function rg_play(soundFilePath) {
 function rg_setUpDOM() {
   // TODO: Clean this up to avoid repeating so much code.
 
+  // TODO: Switch from grid to flex?
+
   const buttonGridDiv = document.createElement("div");
   buttonGridDiv.id = "rg_button_grid";
   buttonGridDiv.style.display = "grid";
