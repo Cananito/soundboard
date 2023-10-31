@@ -18,60 +18,44 @@ function play(soundFilePath) {
 
 // DOM set-up
 
-function setUpDOM() {
-  // TODO: Clean this up to avoid repeating so much code.
+function createButton(id, innerHTML, clickEventListener) {
+  const button = document.createElement("button");
+  button.id = id;
+  button.innerHTML = innerHTML;
+  button.addEventListener("click", clickEventListener);
+  button.style.fontSize = "5vmax";
+  button.style.flexBasis = "50%";
+  button.style.height = "50vh";
+  return button;
+}
 
+function setUpDOM() {
   const html = document.body;
   html.style.margin = "0";
   html.style.padding = "0";
-  html.style.boxSizing = "border-box";
 
   const buttonContainer = document.createElement("div");
   buttonContainer.style.display = "flex";
   buttonContainer.style.flexWrap = "wrap";
 
-  const quackButton = document.createElement("button");
-  quackButton.id = "button_quack";
-  quackButton.innerHTML = "Quack!";
-  quackButton.addEventListener("click", function(e) {
+  const quackButton = createButton("button_quack", "Quack!", function(e) {
     buttonWasClicked(quackButton);
   });
-  quackButton.style.fontSize = "5vmax";
-  quackButton.style.flexBasis = "50%";
-  quackButton.style.height = "50vh";
   buttonContainer.appendChild(quackButton);
 
-  const woofButton = document.createElement("button");
-  woofButton.id = "button_woof";
-  woofButton.innerHTML = "Woof!";
-  woofButton.addEventListener("click", function(e) {
+  const woofButton = createButton("button_woof", "Woof!", function(e) {
     buttonWasClicked(woofButton);
   });
-  woofButton.style.fontSize = "5vmax";
-  woofButton.style.flexBasis = "50%";
-  woofButton.style.height = "50vh";
   buttonContainer.appendChild(woofButton);
 
-  const meowButton = document.createElement("button");
-  meowButton.id = "button_meow";
-  meowButton.innerHTML = "Meow!";
-  meowButton.addEventListener("click", function(e) {
+  const meowButton = createButton("button_meow", "Meow!", function(e) {
     buttonWasClicked(meowButton);
   });
-  meowButton.style.fontSize = "5vmax";
-  meowButton.style.flexBasis = "50%";
-  meowButton.style.height = "50vh";
   buttonContainer.appendChild(meowButton);
 
-  const moooButton = document.createElement("button");
-  moooButton.id = "button_mooo";
-  moooButton.innerHTML = "Mooo!";
-  moooButton.addEventListener("click", function(e) {
+  const moooButton = createButton("button_mooo", "Mooo!", function(e) {
     buttonWasClicked(moooButton);
   });
-  moooButton.style.fontSize = "5vmax";
-  moooButton.style.flexBasis = "50%";
-  moooButton.style.height = "50vh";
   buttonContainer.appendChild(moooButton);
 
   const body = document.body;
