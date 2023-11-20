@@ -1,22 +1,12 @@
-const soundFilePathsById = {
-  "button_quack": "resources/quack.m4a",
-  "button_woof": "resources/woof.m4a",
-  "button_meow": "resources/meow.m4a",
-  "button_mooo": "resources/mooo.m4a",
-};
+const audiosById = {};
 
 function buttonWasClicked(element) {
-  var soundFilePath = soundFilePathsById[element.id];
-  play(soundFilePath);
-};
-
-function play(soundFilePath) {
-  let audio = new Audio(soundFilePath);
+  var audio = audiosById[element.id];
+  if (!audio) {
+    return;
+  }
   audio.play();
 };
-
-
-// DOM set-up
 
 function createButton(id, innerHTML, clickEventListener) {
   const button = document.createElement("button");
@@ -27,9 +17,9 @@ function createButton(id, innerHTML, clickEventListener) {
   button.style.flexBasis = "50%";
   button.style.height = "50vh";
   return button;
-}
+};
 
-function setUpDOM() {
+function initializeUI() {
   const html = document.body;
   html.style.margin = "0";
   html.style.padding = "0";
@@ -62,4 +52,20 @@ function setUpDOM() {
   body.appendChild(buttonContainer);
 };
 
-document.addEventListener("DOMContentLoaded", setUpDOM);
+function loadAudios() {
+  quackAudio = new Audio("resources/quack.m4a");
+  audiosById["button_quack"] = quackAudio;
+  woofAudio = new Audio("resources/woof.m4a");
+  audiosById["button_woof"] = woofAudio;
+  meowAudio = new Audio("resources/meow.m4a");
+  audiosById["button_meow"] = meowAudio;
+  moooAudio = new Audio("resources/mooo.m4a");
+  audiosById["button_mooo"] = moooAudio;
+};
+
+function main() {
+  loadAudios();
+  initializeUI();
+};
+
+document.addEventListener("DOMContentLoaded", main);
