@@ -1,0 +1,8 @@
+* move js to root of project (service workers break otherwise)
+* add offline service worker
+  - https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
+* change Amazon submission to hosted app
+* make webapp installable
+  - https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable
+* play latest sound immediately
+  - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
