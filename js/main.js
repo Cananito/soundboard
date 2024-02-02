@@ -20,9 +20,9 @@ function createButton(id, innerHTML, clickEventListener) {
 };
 
 function initializeUI() {
-  const html = document.body;
-  html.style.margin = "0";
-  html.style.padding = "0";
+  const body = document.body;
+  body.style.margin = "0";
+  body.style.padding = "0";
 
   const buttonContainer = document.createElement("div");
   buttonContainer.style.display = "flex";
@@ -48,7 +48,6 @@ function initializeUI() {
   });
   buttonContainer.appendChild(moooButton);
 
-  const body = document.body;
   body.appendChild(buttonContainer);
 };
 
